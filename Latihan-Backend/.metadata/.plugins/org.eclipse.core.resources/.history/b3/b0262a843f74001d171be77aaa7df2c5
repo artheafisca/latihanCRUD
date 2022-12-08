@@ -1,0 +1,5 @@
+package com.example.latihanbackend.controller;
+
+public class StudentController {
+
+}

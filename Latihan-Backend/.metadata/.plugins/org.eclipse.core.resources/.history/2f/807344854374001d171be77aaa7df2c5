@@ -1,0 +1,26 @@
+package com.example.latihanbackend.repository.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.latihanbackend.model.Student;
+import com.example.latihanbackend.repository.IStudentRepository;
+
+@Repository
+public class StudentRepository implements IStudentRepository {
+
+	@Autowired
+	JdbcTemplate JdbcTemplate;
+	
+	@Override
+	public Student insertStudent(Student student) {
+		// TODO Auto-generated method stub
+		String query = "INSERT INTO tb_student(deskripsi_diri, email, hard_skill, interest, jenis_kelamin, nama, soft_skill, umur)"
+				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		JdbcTemplate.update(query, new Object[] {student.getDeskripsi_diri(), student.getEmail(), student.getHard_skill(), student.getInterest(), student.getJenis_kelamin(), student.getNama(), student.getSoft_skill(), student.getUmur()});
+		
+		return student;
+	}
+
+}

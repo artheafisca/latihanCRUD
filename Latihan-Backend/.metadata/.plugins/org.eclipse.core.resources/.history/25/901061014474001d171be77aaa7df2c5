@@ -1,0 +1,8 @@
+package com.example.latihanbackend.repository;
+
+import com.example.latihanbackend.model.Student;
+
+public interface IStudentRepository {
+	public Student insertStudent(Student student);
+
+}

@@ -1,0 +1,12 @@
+package com.example.latihanbackend.repository;
+
+import java.util.List;
+
+import com.example.latihanbackend.model.Student;
+
+public interface IStudentRepository {
+	public Student insertStudent(Student student);
+	public List<Student> getAllStudent();
+	public Student updateStudent(int id, Student student);
+
+}

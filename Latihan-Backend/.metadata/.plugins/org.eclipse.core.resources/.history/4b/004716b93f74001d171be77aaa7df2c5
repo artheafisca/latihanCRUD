@@ -1,0 +1,20 @@
+package com.example.latihanbackend.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.latihanbackend.model.Student;
+import com.example.latihanbackend.service.IStudentService;
+
+@RestController
+public class StudentController {
+	@Autowired
+	IStudentService studentService;
+	
+	@PostMapping("/insert")
+	public Student insertStudent(@RequestBody Student student) {
+		return studentService.insertStudent(student);
+	}
+}

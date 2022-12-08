@@ -1,0 +1,36 @@
+package com.example.latihanbackend.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.latihanbackend.model.Student;
+import com.example.latihanbackend.repository.IStudentRepository;
+import com.example.latihanbackend.service.IStudentService;
+
+@Service
+public class StudentService implements IStudentService {
+
+	@Autowired
+	IStudentRepository StudentRepository;
+	
+	@Override
+	public Student insertStudent(Student student) {
+		// TODO Auto-generated method stub
+		return StudentRepository.insertStudent(student);
+	}
+
+	@Override
+	public List<Student> getAllStudent() {
+		// TODO Auto-generated method stub
+		return StudentRepository.getAllStudent();
+	}
+
+	@Override
+	public Student updateStudent(int id, Student student) {
+		// TODO Auto-generated method stub
+		return StudentRepository.updateStudent(id, student);
+	}
+
+}
